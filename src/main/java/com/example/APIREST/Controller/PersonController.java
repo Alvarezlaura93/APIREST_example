@@ -1,6 +1,7 @@
 package com.example.APIREST.Controller;
 
 import com.example.APIREST.Model.Person;
+import com.example.APIREST.PersonDto.PersonDto;
 import com.example.APIREST.service.personService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -22,8 +23,8 @@ public class PersonController {
     }
 
     @PostMapping("/person")
-    public Person createPerson(@RequestBody String name, @RequestBody String userName,@RequestBody Date date) throws Exception {
-        return personService.SavePerson(name, userName, date);
+    public Person createPerson(@RequestBody PersonDto person)  {
+        return personService.SavePerson(person.getName(), person.getUserName(),person.getDate());
     }
 }
 

@@ -16,8 +16,7 @@ public class personService {
     private PersonRepository repository;
 
 @Transactional
-    public Person SavePerson(String name, String userName, Date date) throws Exception{
-    validator( name,userName,date);
+    public Person SavePerson(String name, String userName, Date date) {
     Person person = new Person();
     person.setName(name);
     person.setUserName(userName);
